@@ -1,0 +1,282 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	font-family: 'Roboto', sans-serif;
+}
+
+body{
+
+width:100vw;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+overflow-x: hidden;
+}
+html,body{
+	overflow-x: hidden;
+	position:fixed;
+}
+#body2{
+position:relative;
+max-width: 1360px;
+width:100vw;
+height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+overflow-x: hidden;
+}
+:root{
+ --vinho:#8F2827;
+ --rosa:#FF7A78;
+ --camarao:#DB5351;
+ --verdeesc:#188F3E;
+ --verdeclaro:#51DB7D;
+ --azul:#5791A1;
+ --azulclaro:#74D4ED;
+ --amareloclaro:#EDC868;
+ --roxoescuro:#5337A1;
+ --roxoclaro:#845CED;
+}
+
+#container_todo{
+	margin-top:120px;
+	width:500px;
+	height:auto;
+	box-shadow:0px 0px 3px black;
+}
+#banner{
+	display:flex;
+	width:100%;
+	height:120px;
+	align-items:center;
+	justify-content:center;
+	background-color:var(--roxoescuro);
+	box-shadow: 0px 0px 3px black;
+	color:var(--amareloclaro);
+	
+	
+}
+
+#form_todo{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	height:100px;
+	box-shadow: 0px 0px 3px black;
+}
+
+#form_todo button img{
+	width:100%;
+	height:100%;
+
+}
+
+#form_todo button{
+	width:80px;
+	height:40px;
+	background-color:var(--roxoclaro);
+	border:none;
+	box-shadow:0px 0px 3px black;
+	outline:none;
+
+	
+}
+
+#forminp{
+	width:250px;
+	height:40px;
+	box-shadow:0px 0px 3px black;
+	border:none;
+	/*text-decoration: none;
+	line-height: none;
+	text-decoration-style:none;
+	text-decoration-color:none;*/
+	outline:none;
+	font-size:16px;
+}
+#testform{
+	width:100%;
+	height:100%;
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
+	align-items:center;
+	background-color:var(--amareloclaro);
+	
+}
+
+#list{
+	width:100%;
+	height:auto;
+	box-shadow:0px 0px 4px black;
+}
+
+#list ul{
+	list-style:none;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content: center;
+	padding:10px;
+}
+#list ul li{
+width:100%;
+}
+
+.divitemcheck{
+	position:relative;
+	width:100%;
+	height:80px;
+	border:1px solid #ccc;
+	display:grid;
+	grid-template-rows:1fr 1fr;
+	margin-bottom:10px;
+	box-shadow:1px 1px 4px black;
+	
+}
+.divlisttext{
+	width:100%;
+	height:100%;
+	display:grid;
+	grid-template-columns:1fr 6fr 1fr 1fr;
+	align-items:center;
+	justify-items:center;
+}
+.divlistdate{
+	display:grid;
+	grid-template-columns:1fr 1fr;
+}
+#list ul li button{
+	width:23px;
+	height:23px;
+	border:none;
+	outline:none;
+
+}
+
+.imageedit{
+	background:url('./img/editar-arquivo.svg');
+	width:100%;
+	height:100%;
+	background-size: contain;
+	border:none;
+}
+.imageedit:hover{
+	background:url('./img/editar-arquivo2.svg');
+	width:100%;
+	height:100%;
+	background-size: contain;
+	border:none;
+}
+.delimage{
+	background:url("./img/bin.svg");
+	width:100%;
+	height:100%;
+	background-size:contain;
+}
+.delimage:hover{
+	background:url("./img/binred.svg");
+	width:100%;
+	height:100%;
+	background-size:contain;
+}
+
+.divedit{
+	position:absolute;
+	z-index: 10;
+	width:300px;
+	height:80px;
+	transform:translate(120px,20px);
+	border:1px solid black;
+	background-color:var(--roxoclaro);
+	display:none;
+	align-items:center;
+	justify-content:space-evenly;
+}
+#list ul li .buttondivedit{
+	color:var(--roxoescuro);
+	width:50px;
+	height:30px;
+}
+#list ul li .buttondiveditcancel{
+	color:red;
+	width:50px;
+	height:30px;
+}
+#list ul li .divedit input{
+	height:30px;
+}
+
+.plistdatec{
+	color:green;
+}
+
+.divlistdate i{
+	text-align:center;
+}
+
+.popup{
+	padding: 3px;
+	position:absolute;
+	width:200px;
+	height:80px;
+	top:0;
+	transform:translate(1000px,0px);
+	animation:popup 6s normal;
+	display:none;
+	background-color: var(--roxoescuro);
+	color:white;
+	font-weight: bold;
+	box-shadow: 0px 0px 3px black;
+}
+.popup::after{
+	position: absolute;
+	bottom:0;
+	content:"";
+	width:100%;
+	height:7px;
+	background-color:var(--amareloclaro);
+	animation:porcentagem 6s normal;
+}
+
+.buttonck{
+	background-image:url("./img/check.svg");
+}
+.buttonck2{
+	box-shadow:0px 0px 3px var(--roxoclaro);
+}
+
+@keyframes porcentagem{
+	0%{
+		width:200px;
+	}
+	100%{
+		width:0px;
+	}
+}
+
+@keyframes popup{
+	0%{
+		transform:translate(1000px,0px);
+	}
+	10%{
+		transform:translate(150px,0px);
+	}
+	25%{
+		transform:translate(150px,0px);
+	}
+	50%{
+		transform:translate(150px,0px);
+	}
+	80%{
+		transform:translate(150px,0px);
+	}
+	100%{
+		transform:translate(1000px,0px);
+
+	}
+}
